@@ -1,11 +1,11 @@
 #!/bin/bash
-1;4002;0c## lockify.sh for lockify in /home/roman_p/Dropbox/Scripts
+## lockify.sh for lockify in /home/roman_p/Dropbox/Scripts
 ## 
 ## Made by Paul Roman
 ## Login   <roman_p@epitech.net>
 ## 
 ## Started on  Tue Apr 19 13:52:35 2016 Paul Roman
-## Last update Tue Aug  2 14:06:53 2016 Paul Roman
+## Last update Tue Aug  2 14:09:45 2016 Paul Roman
 ##
 
 getMetaData()
