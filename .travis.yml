@@ -4,7 +4,7 @@ before_script:
     - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
 
 script:
-    - bash equality_test.sh
+    - bash lockify.sh
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
