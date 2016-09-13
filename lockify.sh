@@ -5,31 +5,28 @@
 ## Login   <roman_p@epitech.net>
 ## 
 ## Started on  Tue Apr 19 13:52:35 2016 Paul Roman
-## Last update Tue Aug  2 14:09:45 2016 Paul Roman
+## Last update Tue Sep 13 22:13:08 2016 Paul Roman
 ##
 
 getMetaData()
 {
     SP_DEST="org.mpris.MediaPlayer2.spotify"
     SP_PATH="/org/mpris/MediaPlayer2"
-    SP=MEMB="org.mpris.MediaPlayer2.Player"
+    SP_MEMB="org.mpris.MediaPlayer2.Player"
+    SP_PROP="org.freedesktop.DBus.Properties.Get"
 
     if [ $1 == id ]
     then
-	dbus-send --print-reply --dest=$SP_DEST $SP_PATH org.freedesktop.DBus.Properties.Get string:"$SP_MEMB" string:'Metadata' |\
-	    awk 'NR == 13' | cut -c58- | sed 's/.$//'
+	dbus-send --print-reply --dest="$SP_DEST" "$SP_PATH" $SP_PROP string:"$SP_MEMB" string:'Metadata' | awk 'NR == 5' | cut -c58- | sed 's/.$//'
     elif [ $1 == artist ]
     then
-	dbus-send --print-reply --dest=$SP_DEST $SP_PATH org.freedesktop.DBus.Properties.Get string:"$SP_MEMB" string:'Metadata' |\
-	    awk 'NR == 22' | cut -c27- | sed 's/.$//'
+	dbus-send --print-reply --dest="$SP_DEST" "$SP_PATH" $SP_PROP string:"$SP_MEMB" string:'Metadata' | awk 'NR == 22' | cut -c27- | sed 's/.$//'
     elif [ $1 == album ]
     then
-	dbus-send --print-reply --dest=$SP_DEST $SP_PATH org.freedesktop.DBus.Properties.Get string:"$SP_MEMB" string:'Metadata' |\
-	    awk 'NR == 17' | cut -c44- | sed 's/.$//'
+	dbus-send --print-reply --dest="$SP_DEST" "$SP_PATH" $SP_PROP string:"$SP_MEMB" string:'Metadata' | awk 'NR == 17' | cut -c44- | sed 's/.$//'
     elif [ $1 == title ]
     then
-	dbus-send --print-reply --dest=$SP_DEST $SP_PATH org.freedesktop.DBus.Properties.Get string:"$SP_MEMB" string:'Metadata' |\
-	    awk 'NR == 39' | cut -c44- | sed 's/.$//'
+	dbus-send --print-reply --dest="$SP_DEST" "$SP_PATH" $SP_PROP string:"$SP_MEMB" string:'Metadata' | awk 'NR == 41' | cut -c44- | sed 's/.$//'
     fi
 }
 

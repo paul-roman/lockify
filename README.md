@@ -5,6 +5,9 @@
 
 Shell script to lock your screen with the current song you're listening to with Spotify
 
+## V1.1
+Upgrade of the bus session request to conform to Spotify v1.0.*
+
 # Needed programs
 To execute the script, you need two programs :
 First of all, you need i3lock, to lock your screen with a PNG picture.
