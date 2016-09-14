@@ -1,7 +1,7 @@
 # lockify
 
 [![Build Status](https://travis-ci.org/paul-roman/lockify.svg?branch=master)](https://travis-ci.org/paul-roman/lockify)
-[![StyleCI](https://styleci.io/repos/49778645/shield)](https://styleci.io/repos/49778645)
+[![StyleCI](https://styleci.io/repos/49778645/shield?style=flat)](https://styleci.io/repos/49778645)
 
 Shell script to lock your screen with the current song you're listening to with Spotify
 
