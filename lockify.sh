@@ -5,7 +5,7 @@
 ## Login   <roman_p@epitech.net>
 ## 
 ## Started on  Tue Apr 19 13:52:35 2016 Paul Roman
-## Last update Tue Sep 13 22:13:08 2016 Paul Roman
+## Last update Mon Nov 14 15:16:57 2016 Paul Roman
 ##
 
 getMetaData()
@@ -32,14 +32,15 @@ getMetaData()
 
 lockify()
 {
-    i3lock -i lockify.png
+    i3lock -i ~/Projects/lockify/lockify.png
     trap "" INT
     path=".shot.png"
     id=`getMetaData id`
     album=`getMetaData album`
     artist=`getMetaData artist`
     title=`getMetaData title`
-    url=`curl -SsX GET "https://api.spotify.com/v1/tracks/$id" | awk 'NR == 12' | cut -c16- | sed 's/..$//'`
+    url=`curl -SsX GET "https://api.spotify.com/v1/tracks/$id" | awk 'NR == 22' | cut -c16- | sed 's/..$//'`
+    echo $url
     wget -nv $url -O $path &> /dev/null
     
     cp $path .orig.png
